@@ -6901,6 +6901,11 @@ export function getImageOption(options = {}) {
   return file.images;
 }
 
+//yct 添加图片更新功能
+export function setImageOption(options) {
+  imageCtrl.esUpdateImage(options);
+}
+
 /**
  * data => celldata ，data二维数组数据转化成 {r, c, v}格式一维数组
  *

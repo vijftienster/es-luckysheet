@@ -571,7 +571,9 @@ const imageCtrl = {
           bottom: -item.border.width * Store.zoomRatio,
         });
 
-        _this.sliderHtmlShow();
+        // yct:不需要这个图片弹出功能
+        // _this.sliderHtmlShow();
+        method.createHookFunction("imageActive", item);
 
         e.stopPropagation();
       });
@@ -591,7 +593,8 @@ const imageCtrl = {
         }
 
         if (!$("#luckysheet-modal-dialog-slider-imageCtrl").is(":visible")) {
-          _this.sliderHtmlShow();
+          // yct:不需要这个图片弹出功能
+          // _this.sliderHtmlShow();
         }
 
         _this.move = true;
@@ -720,6 +723,14 @@ const imageCtrl = {
         e.stopPropagation();
       });
   },
+
+  //yct添加图片更新功能
+  esUpdateImage: function (item) {
+    let _this = this;
+    _this.images[_this.currentImgId] = item;
+    _this.ref();
+  },
+
   configChange: function (type, value) {
     let _this = this;
 
