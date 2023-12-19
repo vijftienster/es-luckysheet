@@ -130,7 +130,6 @@ const imageCtrl = {
   },
   modelHtml: function (id, imgItem) {
     let _this = this;
-
     let imageUrlHandle =
       Store.toJsonOptions && Store.toJsonOptions["imageUrlHandle"];
     let src =
@@ -728,6 +727,16 @@ const imageCtrl = {
   esUpdateImage: function (item) {
     let _this = this;
     _this.images[_this.currentImgId] = item;
+    _this.ref();
+  },
+  //yct添加图片更新功能
+  esUpdateImageById: function (item, id) {
+    let _this = this;
+    _this.currentImgId = id;
+    _this.images[id] = item;
+    let modelHtml = _this.modelHtml(id, item);
+    $("#" + _this.currentImgId).remove();
+    $("#luckysheet-image-showBoxs .img-list").append(modelHtml);
     _this.ref();
   },
 

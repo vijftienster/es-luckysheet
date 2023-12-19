@@ -6902,8 +6902,9 @@ export function getImageOption(options = {}) {
 }
 
 //yct 添加图片更新功能
-export function setImageOption(options) {
-  imageCtrl.esUpdateImage(options);
+export function setImageOption(options, id) {
+  if (!id) imageCtrl.esUpdateImage(options);
+  else imageCtrl.esUpdateImageById(options, id);
 }
 
 /**
