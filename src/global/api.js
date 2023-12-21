@@ -5867,7 +5867,8 @@ export function scroll(options = {}) {
  * @param {Function} options.success 操作结束的回调函数
  */
 export function resize(options = {}) {
-  luckysheetsizeauto(true, options.width);
+  //yct 指定高度和宽度
+  luckysheetsizeauto(true, options.width, options.height);
 
   let { success } = { ...options };
 

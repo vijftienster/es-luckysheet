@@ -11,7 +11,12 @@ import { defaultToolbar, toolbarIdMap } from "./toolbar";
 let gridW = 0,
   gridH = 0;
 
-export default function luckysheetsizeauto(isRefreshCanvas = true, esWidth) {
+//yct 指定高度和宽度
+export default function luckysheetsizeauto(
+  isRefreshCanvas = true,
+  esWidth,
+  esHeight
+) {
   if (!luckysheetConfigsetting.showinfobar) {
     Store.infobarHeight = 0;
     $("#luckysheet_info_detail").hide();
@@ -102,9 +107,7 @@ export default function luckysheetsizeauto(isRefreshCanvas = true, esWidth) {
       gridW -= $("#luckysheet-modal-dialog-slider-protection").outerWidth();
     }
   }
-  if (esWidth) {
-    gridW = esWidth;
-  }
+
   const _locale = locale();
   const locale_toolbar = _locale.toolbar;
   let ismore = false,
@@ -331,6 +334,14 @@ export default function luckysheetsizeauto(isRefreshCanvas = true, esWidth) {
     .find(".luckysheet")
     .height(gridH - 2)
     .width(gridW - 2);
+
+  //yct 指定高度和宽度
+  if (esWidth) {
+    gridW = esWidth;
+  }
+  if (esHeight) {
+    gridH = esHeight;
+  }
 
   changeSheetContainerSize(gridW, gridH);
 
