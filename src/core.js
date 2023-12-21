@@ -198,8 +198,8 @@ luckysheet.create = function (setting) {
       }
     });
   }
-
-  initChat();
+  //yct 去掉chat组件
+  // initChat();
 };
 
 function initialWorkBook() {
