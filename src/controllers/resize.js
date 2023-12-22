@@ -334,7 +334,6 @@ export default function luckysheetsizeauto(
     .find(".luckysheet")
     .height(gridH - 2)
     .width(gridW - 2);
-
   //yct 指定高度和宽度
   if (esWidth) {
     gridW = esWidth;
